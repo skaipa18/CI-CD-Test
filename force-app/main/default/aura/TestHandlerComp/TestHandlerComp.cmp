@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:handler name="compEvent" event="c:TestCompEvent" action="{!c.handleMethod}"/>
+    <aura:attribute name="eventmsg" type = "String" default="No Event Triggered."/>
+    <aura:attribute name="numberOfEvents" type="integer" default="0"/>
+    <label> Message : {!v.eventmsg}</label> 
+    
+    <c:TestNotifierComp/>
+    <br/>
+    <label>Number Of Times Event Called :::: {!v.numberOfEvents}</label>
+</aura:component>

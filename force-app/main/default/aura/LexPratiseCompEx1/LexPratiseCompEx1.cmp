@@ -1,0 +1,103 @@
+<aura:component controller= "AccountContactRecentData" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+      
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   <aura:attribute name = "Map" type = "Map" />
+    <aura:attribute name = "Leadlist" type = "list"/>
+    
+    <aura:attribute name="Brahmin" type="Boolean" default="true"/>
+    <aura:attribute name="Onsite" type="Boolean" default="false"/>
+    <aura:attribute name="SoftWareEngineer" type="Boolean" default="true"/>
+    <aura:attribute name="Female" type="Boolean" default="false"/>
+    
+ <div class="Data">  
+        
+    <h1> <strong>Account and Contact recent Data. </strong> </h1>
+    <br/>    
+    
+ <div class="Raw">   
+    <ul>
+      <aura:iteration items="{!v.Map.Acc}" var="acc">
+        <li type="dice">
+            <strong>Account Name : </strong> {!acc.Name}</li>
+           
+      </aura:iteration>
+        
+    </ul>
+    
+    <br/>
+    
+    <ul>
+    <aura:iteration items="{!v.Map.Con}" var="con">
+        <li type="dice"> <strong> Contat Name : </strong>{!con.Name}</li>
+        
+    </aura:iteration>
+    
+    </ul>
+    
+</div>	
+    </div>
+    
+    <br/>
+    
+    <div class="Listview">
+    
+    <lightning:listView aura:id="listViewAccounts"
+    objectApiName="Account"
+    listName="Account_With_Phone"
+    rows="5"/>
+           
+    </div>
+    
+    <div class="IfElse">
+        
+        <aura:if isTrue = "{!and(v.Brahmin,v.SoftWareEngineer)}">
+         AND : Bramin and SoftwareEngineer both are TRUE!!!!!
+        </aura:if>
+        <br/>
+        <aura:if isTrue = "{!or(v.Onsite,v.Female)}">
+         OR : IF both of Onsite and Female  are FALSE!!!!!
+            
+        <aura:set attribute="else">
+        OR : BOth are false ,that's why in ELSE!!!!!!!
+        </aura:set>
+            
+        </aura:if>  
+              
+        
+    </div>
+    <br/>
+    <div class="DataTable">
+    <lightning:datatable data="{!v.Map.Lead}"
+                         columns = "{!v.Leadlist}"
+                         keyField="Id" hideColumnCheckBox="true"/>
+    
+    
+    
+    </div>
+    
+    <br/>
+    
+    
+    <ul>
+    <aura:iteration items="{!v.Map.AccContact}" var="acc">
+        <li>Accont Name : {!acc.Name}</li>
+        
+         <ul>
+        <aura:iteration items="{!acc.Contacts}" var="con" indexVar="index">
+                       
+            <li>{!index+1} Contact Name : {!con.Name}</li>                   
+        
+        </aura:iteration>
+        </ul>
+        <hr/>   
+    </aura:iteration>
+    
+    </ul>    
+    
+    
+    
+    
+
+</aura:component>

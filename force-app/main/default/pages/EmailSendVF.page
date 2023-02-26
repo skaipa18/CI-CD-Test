@@ -1,0 +1,14 @@
+<apex:page controller="MailSendFromClass">
+<apex:form >
+<apex:pageBlock title="Send Email">
+<apex:pageBlockSection >
+<apex:outputLabel >ToEmails :</apex:outputLabel>
+<apex:inputText value="{!tomail}"/>
+<apex:outputLabel >CCEnails :</apex:outputLabel>
+<apex:inputText value="{!ccmail}"/>
+<apex:commandButton value="SendEmail" action="{!SendEmail}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<template>
+    =========Array Varibles Display using foreach foritem ==========
+    <template for:each={arrayvar} for:item=each>
+        <p key={each}>{each}</p>
+    </template>
+
+    =========Array Varibles Display using iterator  ==========
+    <template iterator:it={arrayvar}>
+        <p key={it.value}>{it.value}</p>
+    </template>
+    =========Array JSON Varibles Display using iterator  ==========
+    <template iterator:it={arrayJSON}>
+        <p key={it.value.name}>{it.value.name}</p>
+    </template>
+
+</template>

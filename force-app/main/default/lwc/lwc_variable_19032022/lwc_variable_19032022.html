@@ -1,0 +1,24 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="6">
+            Name : {name} </br>
+            Id  : {id} </br>
+            age : {age} </br>
+            city : {city} </br>
+            <lightning-input label="Enter Batch No " value={batch}></lightning-input>
+            <lightning-button label="Submit" onclick={submit}></lightning-button>
+            
+        </lightning-layout-item>
+
+        <lightning-layout-item size="4">
+            Batch No is : {batch}
+            
+        </lightning-layout-item>
+    </lightning-layout>
+    <lightning-layout>
+        <lightning-layout-item>
+            Batch No is : {batch}
+            
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,20 @@
+<apex:page controller="CalculatorClass">
+    <apex:form >
+        <apex:pageBlock title="Calculator Demo">
+            <apex:pageBlockSection title="Calculator Functions" columns="2">
+                <apex:outputLabel >Number1:</apex:outputLabel>
+                <apex:inputText value="{!numberA}"/>
+                <apex:outputLabel >Number2</apex:outputLabel>
+                <apex:inputText value="{!numberB}"/>
+                <apex:commandButton value="Sum" action="{!SumFun}"/>
+                <apex:commandButton value="Mul" action="{!MulFun}"/>
+                <apex:commandButton value="Sub" action="{!SubFun}"/>
+                <apex:commandButton value="Div" action="{!DivFun}"/>
+                <apex:outputLabel >Total:</apex:outputLabel>
+               <apex:outputText >{!Total}</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+     
+  </apex:form>
+  
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page standardController="Account">
+  <!-- My First VFP Programme -->
+     <apex:form >
+         <apex:pageBlock title="My Content">
+           
+         <apex:pageBlockButtons > 
+         <apex:commandButton action="{!Save}" value="Save Me"/>
+         </apex:pageBlockButtons>  
+           
+         <apex:pageBlockSection title="Account Fields Data" columns="2">
+         <apex:inputField value="{!Account.name}"/>
+         <apex:inputField value="{!Account.Fax}"/>
+         
+         </apex:pageBlockSection>
+         </apex:pageBlock>
+     </apex:form>
+ 
+</apex:page>

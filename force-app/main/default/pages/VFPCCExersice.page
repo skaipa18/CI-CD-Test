@@ -1,0 +1,17 @@
+<apex:page controller="VFPCCEXclass">
+<apex:form >
+<apex:pageBlock title="Custome Controller Demo">
+<apex:pageBlockSection title="Custom Controller Demo Section Area" columns="2">
+<apex:outputLabel >FirstName:</apex:outputLabel>
+<apex:inputText value="{!FirstName}"/>
+<apex:outputLabel >MiddleName:</apex:outputLabel>
+<apex:inputText value="{!MiddleName}"/>
+<apex:outputLabel >LastName:</apex:outputLabel>
+<apex:inputText value="{!LastName}"/>
+<apex:outputLabel >Full Name : </apex:outputLabel>
+<apex:outputText >{!ShowFullNamestr}</apex:outputText>
+<apex:commandButton value="Show Full Name" action="{!ShowFullName}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

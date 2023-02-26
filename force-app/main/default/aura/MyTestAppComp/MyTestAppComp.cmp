@@ -1,0 +1,9 @@
+<aura:component >
+    <aura:attribute name="text" type="string" default="PL-01;PL-02;PL-03."/>
+    <aura:handler name="init" value="{!this}" action="{!c.Init}"/>
+    <aura:method name="JSMethod" action="{!c.JSFun}"/>
+    <span style="font-weight:bold">SWARNAKUMAR:</span>
+    <ui:outputtext value="{!v.text}"/>
+    <span style="font-weight:bold">KAIPA</span>
+    <b>KAIPA SWARNAKUMAR</b>
+</aura:component>

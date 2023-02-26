@@ -1,0 +1,25 @@
+<apex:page controller="PostalIntegrationApex" showHeader="false" sidebar="false" lightningStylesheets="true">
+
+<apex:form >
+
+<apex:pageBlock title="Postal Branches">
+    <apex:pageBlockSection title="Postal Branches Section" columns="2">
+        
+        <apex:inputtext label="Enter Postal Code :" html-placeholder="Enter Pin Code Here" value="{!postalcode}"  />
+        <apex:commandButton value="Search" action="{!PostalIntegrationApex1}" rerender="pgblock"/>
+    </apex:pageBlockSection>  
+    
+        
+</apex:pageBlock> 
+    
+  <apex:pageBlock title="Postal Branch Details" id="pgblock">
+       <apex:pageBlockTable value="{!listPostalSupportClass}" var="br">
+                <apex:column value="{!br.Name}" headerValue="Name" />
+                <apex:column value="{!br.BranchType}" headerValue="BranchType" />
+            </apex:pageBlockTable>  
+      
+  </apex:pageBlock>
+ 
+</apex:form>    
+    
+</apex:page>

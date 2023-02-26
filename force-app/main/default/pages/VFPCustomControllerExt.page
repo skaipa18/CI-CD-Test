@@ -1,0 +1,22 @@
+<apex:page standardController="Account" extensions="VFPCCEXclass">
+<apex:form >
+<apex:pageBlock title="Page Block 1">
+<apex:pageBlockSection title="Page Bloc Section 1 | Custom Controller Example " columns="2">
+<apex:pageBlockSectionItem ><apex:commandButton value="Greetings" action="{!ShowGreetings}"/></apex:pageBlockSectionItem>
+<apex:outputLabel value="Message:">{!GreetingsMsg}</apex:outputLabel>
+
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+
+<apex:form >
+<apex:pageBlock title="Page Block 2">
+<apex:pageBlockSection title="Page Block Section 2| Standard Controller " columns="2">
+<apex:inputField value="{!Account.name}"/>
+<apex:inputField value="{!Account.Fax}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

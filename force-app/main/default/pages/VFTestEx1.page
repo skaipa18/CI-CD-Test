@@ -1,0 +1,17 @@
+<apex:page controller="VFControllerApex">
+    <apex:form >
+    <apex:pageBlock title="KSK Page Block">
+        
+        <apex:pageBlockSection title="KSK Page Block Section" columns="2">
+        
+            <apex:outputLabel >Enter First Nmae :</apex:outputLabel>
+            <apex:inputtext value="{!firstName}"></apex:inputtext>
+            <apex:commandButton action="{!getMessage}" rerender="xyz"/>
+            <apex:outputlabel id="xyz">{!message}</apex:outputlabel>
+            <apex:outputlabel id="xyz1">{!message}</apex:outputlabel>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

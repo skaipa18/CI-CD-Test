@@ -1,0 +1,51 @@
+<apex:page standardController="Account" extensions="VFPCLSCoversAllScenarios" action="{!TableData}" renderAs="pdf">
+<apex:form >
+<apex:pageBlock title="VF Page Block">
+<apex:pageBlockSection title="Object Section" columns="2">
+<apex:inputField value="{!Account.Name}"/>
+<apex:inputField value="{!Account.Fax}"/>
+<apex:commandButton value="Save!" action="{!Save}"/>
+</apex:pageBlockSection>
+
+
+
+<apex:pageBlockSection title="Custome Section" columns="2">
+<apex:outputLabel >FirstName :</apex:outputLabel>
+<apex:inputText value="{!Firstname}"/>
+<apex:outputLabel >LastName :</apex:outputLabel>
+<apex:inputText value="{!Lastname}"/>
+<apex:outputLabel id="ClsField">Full Name :</apex:outputLabel>
+<apex:outputText >{!Fullname}</apex:outputText>
+<apex:commandButton value="Click Me!" action="{!FullNameFun}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Manual Save Section" columns="2">
+<apex:pageBlockSectionItem >Company Name: <apex:inputText value="{!AccName}"/></apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >Phone No: <apex:inputText value="{!AccPhone}"/></apex:pageBlockSectionItem>
+<apex:commandButton value="Custom Save!" action="{!SaveTheData}"/>
+</apex:pageBlockSection>
+
+
+</apex:pageBlock>
+</apex:form>
+
+
+<apex:form >
+<apex:pageBlock title="Table Section">
+
+
+
+<apex:commandButton value="Click To Get Table Data" action="{!TableData}" reRender="table"/>
+
+<apex:pageBlockTable value="{!DataList}" var="Acct" id="table" rendered="{!if(DataList.size > 0,true,false)}">
+<apex:column value="{!Acct.Name}"/>
+<apex:column value="{!Acct.id}"/>
+<apex:column value="{!Acct.description}"/>
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+</apex:form>
+
+
+  
+</apex:page>

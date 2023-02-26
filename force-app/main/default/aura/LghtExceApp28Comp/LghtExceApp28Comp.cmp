@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <p>Start From Here </p> <br/>
+    <p>Value set from begining : {!v.Displaymsg}</p><br/>
+    <aura:attribute name="EnterName" type="string" default="KVNS KUMAR"/>
+    <aura:attribute name="Price" type="integer" default="2341"/>
+    <aura:attribute name="outtext" type = "boolean" default="false"/>
+    <aura:attribute name="Displaymsg" type = "string" default = "Starting Msg Here"/>
+    <aura:attribute name="InitialValue" type = "integer" default = "10001"/>
+    <lightning:button label="Click To Show Submit" name= "Submit Event" onclick="{!c.demoDisplay}" aura:id="DB"/>
+    
+    <p>{!v.Displaymsg}</p>    
+    <ui:inputtext label="Enter name" aura:id= "EN" value="{!v.EnterName}" />
+    <ui:inputtext label="Enter Price" aura:id= "EP" value="{!v.Price}"/>
+    
+    <aura:if isTrue = "{!v.outtext}">
+        
+    <lightning:button label="Submit" name= "Submit Event" onclick="{!c.getDisplay}" aura:id="EB"/>
+    <ui:outputtext value="" aura:id="OT"/>
+     <h1>END Here</h1>   
+     </aura:if>
+    <table>
+    <thead>
+        <th>Enter Name</th>
+        <th>Price </th>
+        </thead>
+        <tbody>
+        <td><strong>{!v.EnterName}</strong></td>
+            <td><strong>{!v.Price}</strong></td>
+        </tbody>
+    </table>
+    <h1>After Submit Button </h1>
+    <br/>
+    <p>{!v.InitialValue}</p>
+</aura:component>

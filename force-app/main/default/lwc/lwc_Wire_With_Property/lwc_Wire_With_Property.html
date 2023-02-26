@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Account Details">
+        <template if:true={acctlist.data}>
+            <template for:each={acctlist.data} for:item="each">
+             
+             <li key={each.id}> 
+                 {each.Id} || {each.Name} || {each.AccountNumber}
+
+             </li>
+
+            </template>
+        </template>    
+    </lightning-card>
+</template>

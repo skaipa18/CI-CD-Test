@@ -1,0 +1,36 @@
+<aura:component controller = "TestApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name = "computerForm" type="Computer__c" default= "{'sObjectType':'Computer__c',
+                    'HardDiskSize_GB__c':'',
+                    'Processor_Ghz__c':'',
+                     'RAM_GB__c':'',
+                     'Name':''}" />
+    <!--  <ui:inputtext aura:id="FNId" label="First Name" placeHolder="Enter Your First Name"/>
+    <ui:inputtext aura:id="LNId" label="Last Name" placeHolder="Enter Last Name"/>
+    <ui:button label = "Submit" press="c.getNames"/>
+    <br/>
+    <br/>
+    <p>OutLook :     
+    <ui:outputtext aura:id="FullNameId" value=""/>
+    </p>  -->
+    <div>
+    	
+        <label>Name             </label>
+        <ui:inputtext value="{!v.computerForm.Name}"/>
+        
+        <br/>
+        <label>HardDiskSize (GB) </label>
+        <ui:inputtext value="{!v.computerForm.HardDiskSize_GB__c}"/>
+        
+        <br/>
+        <label>Processor (Ghz)    </label>
+        <ui:inputtext value="{!v.computerForm.Processor_Ghz__c}"/>
+        <br/>
+        <label>Ram (GB)           </label>
+        <ui:inputtext value="{!v.computerForm.RAM_GB__c}"/>
+        <br/>
+        <Lightning:button label="Create" variant="Brand" onclick="{!c.callJS}"/>
+    
+    </div>
+    
+</aura:component>

@@ -1,0 +1,22 @@
+<apex:page controller="MyContactListsClass" action="{!ShowData}">
+
+<apex:form >
+
+<apex:pageBlock title="Custome Contacts List">
+<apex:pageBlockButtons >
+<apex:commandButton value="ShowData" action="{!ShowData}"/>
+
+</apex:pageBlockButtons>
+
+<apex:pageBlockTable value="{!ContactList}" var="contact">
+
+<apex:column value="{!contact.Name}"/>
+<apex:column value="{!contact.Email}"/>
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+
+
+</apex:form>
+
+</apex:page>

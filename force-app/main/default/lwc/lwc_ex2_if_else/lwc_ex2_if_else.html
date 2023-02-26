@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Pls Fill the Form" icon-name="custom:custom50">
+        <template if:true={responseboolean}>
+         <lightning-input label="Enter Name  " onchange={fname}></lightning-input>
+         <lightning-input label="Enter Age  " onchange={fage}></lightning-input>
+         <lightning-input label="Enter Place  " onchange={fplace}></lightning-input>
+        <br><br><br>
+        <lightning-button label="Submit Here" onclick={collectdata}></lightning-button>
+        </template>
+        </lightning-card>
+      <br><br>
+        <template if:false={responseboolean}>
+        
+        
+      
+<lightning-card title="Submitted Data Shown Here">
+
+Enter Name  : {lname} <p></p>
+Enter Age   : {lage}  <p></p>
+Enter Place : {lplace} <p></p>
+
+<lightning-button label="Fill Again" onclick={clearAll}></lightning-button>
+</lightning-card>
+        
+       </template>
+
+</template>

@@ -1,0 +1,12 @@
+<apex:page controller="VFPEXclass" >
+    <apex:form >
+<apex:pageBlock title="My Content">
+<apex:pageBlockSection title="My Content Section" columns="2">
+<apex:outputLabel > Enter Name : </apex:outputLabel>
+<apex:inputText value="{!UserName}"/>        
+<Apex:commandButton value="Click Me"  Action="{!ShowMessage}" />
+<Apex:outPutLabel > {!message} </Apex:outPutLabel>
+</apex:pageBlockSection>            
+</apex:pageBlock>
+    </apex:form>
+</apex:page>

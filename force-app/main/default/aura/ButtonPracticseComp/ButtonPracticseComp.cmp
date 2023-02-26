@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	
+    <div>
+<button onclick = "" class="slds-button slds-button_neutral">First</button>
+ <ui:button aura:id="button" buttonTitle="Click to see what you put into the field" class="button" label="Click me" press="{!c.getInput}"/>
+ 
+        <lightning:button label="Save" onclick="" />
+    
+</div>
+    
+</aura:component>

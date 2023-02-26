@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="------Account Details---">
+        <lightning-input type="search" label="Search" onchange={handlekey}></lightning-input>
+        <br>
+        <template if:true={accountlist}>
+            <template for:each={accountlist} for:item="each">
+             <lightning-layout vertical-align="center" key={each.id}>
+             <li> 
+                 {each.Id} || {each.Name} || {each.AccountNumber}
+
+             </li>
+            </lightning-layout>
+            </template>
+        </template>    
+    </lightning-card>
+</template>

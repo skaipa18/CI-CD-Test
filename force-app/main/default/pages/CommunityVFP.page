@@ -1,0 +1,20 @@
+<apex:page >
+    <!--https://kvns-developer-edition.ap15.force.com/kvns/lightning/lightning.out.js -->
+    <apex:includeLightning />    
+    <div id="lightning"/>
+            <script>
+            $Lightning.use("c:AccountListApp",   
+                           function() {               
+                               $Lightning.createComponent(
+                                   "c:AccountListForCommunity", 
+                                   { },                 
+                                   "lightning",  
+                                   function(cmp) {
+                                       // callback when component is created and active on the page
+                                   }
+                               );
+                           },
+                           //'https://kvns-developer-edition.ap15.force.com/kvns/'  // Community endpoint 
+                          );
+    </script>
+</apex:page>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-input label="Enter First Value : " name="fval" onchange={change}></lightning-input>
+            <lightning-input label="Enter second Value : " name="sval" onchange={change}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button label="Add" onclick={add}></lightning-button>
+            <lightning-button label="Sub" onclick={sub}></lightning-button>
+            <lightning-button label="Mul" onclick={mul}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            The Result Value is :  {resvalue} 
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

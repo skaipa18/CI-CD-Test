@@ -1,0 +1,49 @@
+<aura:component controller = "AcountDetailsForPagenation"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name = "AllAccountData" type = "Account[]"/>
+    <aura:attribute name = "CurrentAccRec"  type = "Account[]"/>
+    <aura:attribute name = "PageNumber" type = "integer" default = "1"/>
+    <aura:attribute name = "MaxPage" type = "integer" />
+    
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}"/>
+    <aura:handler name = "change" value = "{!v.PageNumber}" action = "{!c.renderPage}" />
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+	   <thead>
+		<tr class="slds-line-height_reset">
+			<th scope="col">
+			<div class="slds-truncate" title="Account Name">Account Name</div>
+			</th>
+<th scope="col">
+<div class="slds-truncate" title="Industry">Industry</div>
+</th>
+<th scope="col">
+<div class="slds-truncate" title="Phone">Phone</div>
+</th>
+
+</tr>
+</thead>
+
+<tbody>
+ <aura:iteration items = "{!v.CurrentAccRec}" var = "data">
+<tr class="slds-hint-parent">
+<th data-label="Account Name" scope="row">
+<div class="slds-truncate" title="{!data.Name}"> {!data.Name}</div>
+</th>
+<td data-label="Industry">
+<div class="slds-truncate" title="{!data.Industry}">{!data.Industry}</div>
+</td>
+<td data-label="Phone">
+<div class="slds-truncate" title="{!data.Phone}">{!data.Phone}</div>
+</td>
+
+</tr>
+  </aura:iteration>
+</tbody>
+    
+    
+</table>
+    
+    <c:PagenationButtonComp CurrentPageNumber = "{!v.PageNumber}" MaxPageNumber = "{!v.MaxPage}"/>
+</aura:component>

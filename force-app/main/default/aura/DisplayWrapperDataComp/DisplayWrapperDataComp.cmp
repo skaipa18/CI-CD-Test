@@ -1,0 +1,62 @@
+<aura:component controller = "WrapperClassApex" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler>    
+
+<aura:attribute name="WrapperClassData" type="Object"/>    
+
+ <div class="slds-p-around_large">   
+    
+ <h1 style="font-size : 25px;"> Display Account Rows</h1>
+    <br/>
+ <p style="color : blue">Total Rows : {!v.WrapperClassData.RecSize}</p> 
+    <br/>
+     
+    
+<div class="slds-card">
+<div class="slds-p-around_medium">Total Rows : {!v.WrapperClassData.RecSize}</div>
+</div>
+
+     
+     
+<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+<thead>
+<tr class="slds-line-height_reset">
+  <th class="" scope="col">
+<div class="slds-truncate" title="Checkbox">
+     
+</div>
+</th>  
+<th class="" scope="col">
+<div class="slds-truncate" title="Name">Name</div>
+</th>
+<th class="" scope="col">
+<div class="slds-truncate" title="Industry">Industry</div>
+</th>
+
+</tr>
+</thead>
+<tbody>
+
+<aura:iteration items="{!v.WrapperClassData.Acclist}" var="data" >
+<tr class="slds-hint-parent">
+ <td data-label="Account Name">
+<div class="slds-truncate" title="Name">
+    
+    <lightning:input type="Checkbox" value=""/>
+</div>
+</td>
+<td data-label="Account Name">
+<div class="slds-truncate" title="Name">{!data.Name}</div>
+</td>
+<td data-label="Industry">
+<div class="slds-truncate" title="Industry">{!data.Industry}</div>
+</td>
+</tr>
+    </aura:iteration>
+</tbody>
+</table>
+    </div>
+    
+      
+</aura:component>

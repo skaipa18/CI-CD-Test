@@ -1,0 +1,11 @@
+.THIS {
+    
+}
+.THIS.button {
+    color : yellow;
+    font-size : 10px;
+}
+.THIS.slds-button slds-button_neutral{
+    color : green;
+    font-size : 20px;
+}

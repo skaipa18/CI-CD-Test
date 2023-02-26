@@ -1,0 +1,18 @@
+<template>
+    <div>
+        <br>
+        <p> Event Message 1 : {evtmsg1}</p> <br>
+        <P> Event Message 2 : {evtmsg2}</P> <br>
+        <br><br>
+        <c-lwc_getaccount_lds recordid = '0012v00003NmM7IAAV' onevtcp={handlResponse} get-value-from-parent={pcvalue}>
+
+        </c-lwc_getaccount_lds>
+    </div>
+            
+    <br>
+    <lightning-card title="Publisher">
+    <lightning-input class="slds-p-around_medium" label="Enter Text to Send:" value={strText} onchange={changeName}></lightning-input>
+   <br/>
+   <lightning-button class="slds-p-aroung-medium" label="Publish" onclick={publishEvent} variant ="brand"></lightning-button>
+    </lightning-card>
+</template>

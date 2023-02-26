@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="LWC ForEach ForItem" icon-name="Standard:assigned_resource">
+
+        <template for:each={listdata} for:item="each">
+          
+            <li key={each.id}>
+            
+            {each.name} ||| {each.age} ||| {each.place} 
+            </li>
+        
+
+        </template>
+        <br>
+        <lightning-button label="Showme" icon-position="center" variant="Success" onclick={show}></lightning-button>
+    <br>
+    </lightning-card>
+    
+
+        <lightning-formatted-text value={showvalue}></lightning-formatted-text>
+     
+  
+</template>

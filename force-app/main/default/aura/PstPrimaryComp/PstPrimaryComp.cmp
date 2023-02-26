@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="textP" type="string" default="KVNSKUMAR"/>
+    <aura:attribute name="GlobalVar" type="string" default="Parent Variable"/>
+    {!v.GlobalVar}
+    <c:PstChildComp1 child1Var ="{!v.GlobalVar}"></c:PstChildComp1>
+    {!v.GlobalVar}
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:registerEvent name="compEvent" type="c:TestCompEvent"/>
+    
+    <lightning:button label="Button From Notiifer Component"
+                      onclick="{!c.notifierMethod}"/>
+	
+</aura:component>

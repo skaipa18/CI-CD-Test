@@ -1,0 +1,26 @@
+<template>
+    
+<lightning-card title="Calling Apex Method Imperatively">
+
+<div class="div1">
+
+    <lightning-input type="search" onchange={handlekey} class="slds-m-bottom_small" label="Search">
+    </lightning-input>
+    <template for:each={acctlist} for:item = "each">
+    <lightning-layout key={each.Id} verticle-align = "center"> 
+      <li>
+     {each.Id}   ||  {each.Name}  ||  {each.AccountNumber}
+
+      </li>
+
+    </lightning-layout>
+
+    </template>
+
+
+</div>
+
+
+</lightning-card>
+
+</template>

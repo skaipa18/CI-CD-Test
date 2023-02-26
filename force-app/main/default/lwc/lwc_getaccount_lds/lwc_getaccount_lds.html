@@ -1,0 +1,45 @@
+<template>
+    <lightning-card>
+        <div>
+           <lightning-input type="text" label="Account Name Search Key : " onchange={callme}></lightning-input>
+           <br>
+            Enterning value is :  {inputvalue}
+           <br>
+           <div>
+               Parent To Chile Communication Message : {getValueFromParent}
+           </div>
+           <br>
+            <template if:true={showdata}>
+            
+                <p>Account Name :  {name}</p>
+                <p> Owner Name : {owner}</p>
+                        
+            </template>            
+        </div>
+        <br><br>
+        <lightning-button label="ShowAccountList" onclick={showAcctList}></lightning-button>
+        <div>
+            <template if:true={acctdata}>
+            <template for:each={acctdata} for:item="acct">
+                <p key={acct.Id}> Account ID :  {acct.Id} || Account Name : {acct.Name}</p>
+                
+            </template>  
+            </template>      
+        </div>
+        <br> <br>
+        <div>
+            
+            <template if:true={wiredAcctList.data}>
+                <template for:each={wiredAcctList.data} for:item="acct">
+                    <p key={acct.Id}> Account ID :  {acct.Id} || Account Name : {acct.Name}</p>
+                    
+                </template>  
+                </template> 
+        </div>
+        <br>
+        <div>
+<lightning-button label="ClickForEvent" onclick={callEvent}></lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+.THIS {
+}
+.THIS .Raw{
+    color : blue;
+    position : float;
+    width : 30%
+}
+.THIS .image {
+    position : float;
+    width : 70%
+}
+.THIS.IfElse {
+    color : green;
+}
